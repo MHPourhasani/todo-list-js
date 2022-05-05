@@ -15,9 +15,9 @@
 		<title>Todo List</title>
 	</head>
 
-	<body class="flex justify-between items-start">
-		<header class="w-2/12 bg-gray-100 h-screen rounded-r-sm shadow-md">
-			<p class="font-extrabold text-3xl">Todo List</p>
+	<body class="flex items-start justify-between">
+		<header class="h-screen w-2/12 rounded-r-sm bg-gray-100 shadow-md">
+			<p class="text-3xl font-extrabold">Todo List</p>
 			<nav class="w-full">
 				<ul class="">
 					<li class="">Home</li>
@@ -28,30 +28,48 @@
 			</nav>
 		</header>
 
-		<main class="w-10/12 pt-10 flex flex-col justify-center items-start">
-			<div class="w-full flex justify-between items-center">
-				<section class="w-1/2 flex justify-center items-center">
+		<main class="flex w-10/12 flex-col items-start justify-center pt-10">
+			<div class="flex w-full items-center justify-between">
+				<section class="flex w-1/2 items-center justify-center">
 					<input
 						type="text"
 						id="inputElem"
 						placeholder="Add new Todo ..."
-						class="w-6/12 h-10 bg-gray-100 px-3 mr-2 text-sm border-2 rounded-md outline-none"
+						class="mr-2 h-10 w-6/12 rounded-md border-2 bg-gray-100 px-3 text-sm outline-none"
 					/>
 
 					<button
 						id="addTodoBtn"
-						class="w-10 h-10 bg-violet-500 text-white flex justify-center items-center rounded-md hover:bg-violet-400"
+						class="flex h-10 w-10 items-center justify-center rounded-md bg-violet-500 text-white hover:bg-violet-400"
 					>
 						+
 					</button>
 				</section>
 
-				<section class="w-1/2 flex justify-center items-center">
-					<div class="w-10 h-10 mx-1 border-2 rounded-md"></div>
+				<section class="flex w-1/2 items-center justify-center">
+					<div class="mx-1 h-10 w-10 rounded-md border-2"></div>
 
-					<div class="w-10 h-10 mx-1 border-2 rounded-md">
+					<div class="mx-1 h-10 w-10 rounded-md border-2">
 						<!-- <img class=""/> -->
 					</div>
+				</section>
+			</div>
+
+			<div class="mt-5 flex w-full items-center justify-center">
+				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-900">
+					<p class="border-b-2 py-2 text-center font-medium">not Status</p>
+				</section>
+
+				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-700">
+					<p class="border-b-2 py-2 text-center font-medium">Incomplete</p>
+				</section>
+
+				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-900">
+					<p class="border-b-2 py-2 text-center font-medium">Doing</p>
+				</section>
+
+				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-700">
+					<p class="border-b-2 py-2 text-center font-medium">Completed</p>
 				</section>
 			</div>
 		</main>
