@@ -16,14 +16,37 @@
 	</head>
 
 	<body class="flex items-start justify-between">
-		<header class="h-screen w-2/12 rounded-r-sm bg-gray-100 shadow-md">
+		<header class="h-screen rounded-r-sm bg-gray-100 pr-7 pt-10 pl-7 shadow-md">
 			<p class="text-3xl font-extrabold">Todo List</p>
-			<nav class="w-full">
+			<nav class="w-full pt-7">
 				<ul class="">
-					<li class="my-1">Home</li>
-					<li class="my-1">Incomplete</li>
-					<li class="my-1">Doing</li>
-					<li class="my-1">Completed</li>
+					<li class="my-4 rounded-md px-4 py-2 hover:bg-violet-200 hover:text-violet-600">
+						<a href="#" class="flex items-center justify-start">
+							<i class="fa-light fa-house"></i>
+							<p class="ml-2">Home</p>
+						</a>
+					</li>
+
+					<li class="my-4 rounded-md px-4 py-2 hover:bg-violet-200 hover:text-violet-600">
+						<a href="#" class="flex items-center justify-start">
+							<i class="fa-light fa-house"></i>
+							<p class="ml-2">Home</p>
+						</a>
+					</li>
+
+					<li class="my-4 rounded-md px-4 py-2 hover:bg-violet-200 hover:text-violet-600">
+						<a href="#" class="flex items-center justify-start">
+							<i class="fa-light fa-house"></i>
+							<p class="ml-2">Home</p>
+						</a>
+					</li>
+
+					<li class="my-4 rounded-md px-4 py-2 hover:bg-violet-200 hover:text-violet-600">
+						<a href="#" class="flex items-center justify-start">
+							<i class="fa-light fa-house"></i>
+							<p class="ml-2">Home</p>
+						</a>
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -57,30 +80,34 @@
 
 			<div class="mt-5 flex w-full items-start justify-center">
 				<section
-					class="mx-1 h-full w-3/12 rounded-md border-2 border-gray-400 bg-gray-100 pb-3"
+					class="mx-1 h-full w-4/12 rounded-md border-2 border-red-500 bg-red-50 pb-3"
 				>
-					<p class="border-b-2 border-gray-400 py-2 text-center font-medium">
-						not Status
+					<p
+						class="border-b-2 border-red-500 bg-red-50 py-2 text-center font-medium text-red-600"
+					>
+						Incomplete
 					</p>
-					<ul id="notStatusTodoList"></ul>
+
+					<ul
+						id="inCompleteTodoList"
+						class="flex flex-col items-center justify-center"
+					></ul>
 				</section>
 
 				<section
-					class="mx-1 h-full w-3/12 rounded-md border-2 border-red-500 bg-red-50 pb-3"
+					class="mx-1 h-full w-4/12 rounded-md border-2 border-sky-500 bg-sky-50 pb-3 text-sky-600"
 				>
-					<p class="border-b-2 border-red-500 py-2 text-center font-medium">Incomplete</p>
+					<p class="border-b-2 border-sky-500 bg-sky-50 py-2 text-center font-medium">
+						Doing
+					</p>
 				</section>
 
 				<section
-					class="mx-1 h-full w-3/12 rounded-md border-2 border-sky-500 bg-sky-50 pb-3"
+					class="mx-1 h-full w-4/12 rounded-md border-2 border-green-600 bg-green-50 pb-3"
 				>
-					<p class="border-b-2 border-sky-500 py-2 text-center font-medium">Doing</p>
-				</section>
-
-				<section
-					class="mx-1 h-full w-3/12 rounded-md border-2 border-green-600 bg-green-50 pb-3"
-				>
-					<p class="border-b-2 border-green-600 py-2 text-center font-medium">
+					<p
+						class="border-b-2 border-green-600 bg-green-50 py-2 text-center font-medium text-green-600"
+					>
 						Completed
 					</p>
 				</section>
