@@ -20,10 +20,10 @@
 			<p class="text-3xl font-extrabold">Todo List</p>
 			<nav class="w-full">
 				<ul class="">
-					<li class="">Home</li>
-					<li class="">Incomplete</li>
-					<li class="">Doing</li>
-					<li class="">Completed</li>
+					<li class="my-1">Home</li>
+					<li class="my-1">Incomplete</li>
+					<li class="my-1">Doing</li>
+					<li class="my-1">Completed</li>
 				</ul>
 			</nav>
 		</header>
@@ -35,7 +35,7 @@
 						type="text"
 						id="inputElem"
 						placeholder="Add new Todo ..."
-						class="mr-2 h-10 w-6/12 rounded-md border-2 bg-gray-100 px-3 text-sm outline-none"
+						class="mr-2 h-10 w-8/12 rounded-md border-2 border-violet-600 bg-gray-100 px-3 text-sm outline-none"
 					/>
 
 					<button
@@ -55,27 +55,40 @@
 				</section>
 			</div>
 
-			<div class="mt-5 flex w-full items-center justify-center">
-				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-900">
-					<p class="border-b-2 py-2 text-center font-medium">not Status</p>
+			<div class="mt-5 flex w-full items-start justify-center">
+				<section
+					class="mx-1 h-full w-3/12 rounded-md border-2 border-gray-400 bg-gray-100 pb-3"
+				>
+					<p class="border-b-2 border-gray-400 py-2 text-center font-medium">
+						not Status
+					</p>
+					<ul id="notStatusTodoList"></ul>
 				</section>
 
-				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-700">
-					<p class="border-b-2 py-2 text-center font-medium">Incomplete</p>
+				<section
+					class="mx-1 h-full w-3/12 rounded-md border-2 border-red-500 bg-red-50 pb-3"
+				>
+					<p class="border-b-2 border-red-500 py-2 text-center font-medium">Incomplete</p>
 				</section>
 
-				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-900">
-					<p class="border-b-2 py-2 text-center font-medium">Doing</p>
+				<section
+					class="mx-1 h-full w-3/12 rounded-md border-2 border-sky-500 bg-sky-50 pb-3"
+				>
+					<p class="border-b-2 border-sky-500 py-2 text-center font-medium">Doing</p>
 				</section>
 
-				<section class="mx-1 h-96 w-3/12 rounded-md border-2 bg-slate-700">
-					<p class="border-b-2 py-2 text-center font-medium">Completed</p>
+				<section
+					class="mx-1 h-full w-3/12 rounded-md border-2 border-green-600 bg-green-50 pb-3"
+				>
+					<p class="border-b-2 border-green-600 py-2 text-center font-medium">
+						Completed
+					</p>
 				</section>
 			</div>
 		</main>
 
 		<footer></footer>
 
-		<script src="/script.js"></script>
+		<script src="/public/script.js"></script>
 	</body>
 </html>
