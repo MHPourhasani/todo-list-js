@@ -65,12 +65,15 @@ function addTodoToNotStatus(todosArray) {
 		newCompleteBtn.className =
 			'bg-green-500 mx-1 text-white text-sm rounded-md flex items-center justify-center';
 
-		// newDeleteBtn
+		// newDeleteBtn add delete handler
 		newDeleteBtn = $.createElement('button');
 		// newDeleteBtn.innerHTML = '<i class="fa-light fa-trash"></i>';
 		newDeleteBtn.innerHTML = 'delete';
 		newDeleteBtn.className =
 			'bg-red-500 mx-1 text-white text-sm rounded-md flex items-center justify-center';
+		newDeleteBtn.addEventListener('click', function (e) {
+			e.target.parentElement.parentElement.remove();
+		});
 
 		// append newCompleteBtn and newDeleteBtn to newDivElem
 		newDivElem.append(newDoingBtn, newCompleteBtn, newDeleteBtn);
