@@ -4,11 +4,20 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="./styles/tstyles.css" />
 		<title>Todo List</title>
 	</head>
-	<body>
-		<header class="w-1/12 bg-gray-100 h-screen rounded-r-sm shadow-md">
+
+	<body class="flex justify-between items-start">
+		<header class="w-2/12 bg-gray-100 h-screen rounded-r-sm shadow-md">
+			<p class="font-extrabold text-3xl">Todo List</p>
 			<nav class="w-full">
 				<ul class="">
 					<li class="">Home</li>
@@ -19,7 +28,33 @@
 			</nav>
 		</header>
 
-		<main></main>
+		<main class="w-10/12 pt-10 flex flex-col justify-center items-start">
+			<div class="w-full flex justify-between items-center">
+				<section class="w-1/2 flex justify-center items-center">
+					<input
+						type="text"
+						id="inputElem"
+						placeholder="Add new Todo ..."
+						class="w-6/12 h-10 bg-gray-100 px-3 mr-2 text-sm border-2 rounded-md outline-none"
+					/>
+
+					<button
+						id="addTodoBtn"
+						class="w-10 h-10 bg-violet-500 text-white flex justify-center items-center rounded-md hover:bg-violet-400"
+					>
+						+
+					</button>
+				</section>
+
+				<section class="w-1/2 flex justify-center items-center">
+					<div class="w-10 h-10 mx-1 border-2 rounded-md"></div>
+
+					<div class="w-10 h-10 mx-1 border-2 rounded-md">
+						<!-- <img class=""/> -->
+					</div>
+				</section>
+			</div>
+		</main>
 
 		<footer></footer>
 
