@@ -1,7 +1,9 @@
 module.exports = {
 	content: ['./public/**/*.{html,js}'],
 	theme: {
-		extend: {},
+		extend: {
+			borderWidth: { 1: '1px' },
+		},
 	},
 	plugins: [],
 };
