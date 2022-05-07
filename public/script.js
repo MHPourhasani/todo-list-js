@@ -1,6 +1,7 @@
 const $ = document;
 const inputElem = $.querySelector('#inputElem');
 const addTodoBtn = $.querySelector('#addTodoBtn');
+const clearInputBtn = $.querySelector('#clearInputBtn');
 
 const inCompleteTodoList = $.querySelector('#inCompleteTodoList');
 // const inputElem = $.querySelector('#inputElem');
@@ -10,7 +11,12 @@ const inCompleteTodoList = $.querySelector('#inCompleteTodoList');
 let todosArray = [];
 
 // create addTodo function ==> addTodoBtn event Listener
-function addTodo(params) {
+clearInputBtn.addEventListener('click', function () {
+	inputElem.value = '';
+});
+
+// create addTodo function ==> addTodoBtn event Listener
+function addTodo() {
 	let inputValue = inputElem.value.trim();
 
 	if (inputValue) {
@@ -19,7 +25,6 @@ function addTodo(params) {
 			todoTitle: inputValue,
 			status: 'not Status',
 		};
-
 		todosArray.push(newTodoObj);
 		setlocalStorageFunc(todosArray);
 		addTodoToNotStatus(todosArray);
@@ -27,6 +32,7 @@ function addTodo(params) {
 
 		inputElem.classList.add('border-violet-600');
 		inputElem.classList.remove('border-red-600', 'placeholder:text-red-600');
+		inputElem.placeholder = 'Add new Todo ...';
 	} else {
 		inputElem.classList.remove('border-violet-600');
 		inputElem.placeholder = 'Invalid Todo ...';
@@ -61,14 +67,20 @@ function addTodoToNotStatus(todosArray) {
 		// newCompleteBtn
 		newCompleteBtn = $.createElement('button');
 		// newCompleteBtn.innerHTML = '<i class="fa-light fa-squarw-check"></i>';
-		newCompleteBtn.innerHTML = 'complete';
+		newCompleteBtn.innerHTML = '<i class="fa fa-trash-o"></i>';
+		// newCompleteBtn.innerHTML = 'complete';
 		newCompleteBtn.className =
 			'bg-green-500 mx-1 text-white text-sm rounded-md flex items-center justify-center';
 
 		// newDeleteBtn add delete handler
 		newDeleteBtn = $.createElement('button');
-		// newDeleteBtn.innerHTML = '<i class="fa-light fa-trash"></i>';
-		newDeleteBtn.innerHTML = 'delete';
+		// let newIElem = $.createElement('i');
+		// newIElem.className='class="bi bi-trash">'
+		// newDeleteBtn.append(newIElem)
+		newDeleteBtn.innerHTML = '&#xF5DE';
+		// newDeleteBtn.innerHTML = '<i class="fa fa-trash-o"></i>';
+
+		// newDeleteBtn.innerHTML = 'delete';
 		newDeleteBtn.className =
 			'bg-red-500 mx-1 text-white text-sm rounded-md flex items-center justify-center';
 		newDeleteBtn.addEventListener('click', function (e) {
