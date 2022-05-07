@@ -105,6 +105,7 @@ function setlocalStorageFunc(todosArray) {
 
 // create addTodoBtn Event Listener
 addTodoBtn.addEventListener('click', addTodo);
+addTodoBtn.addEventListener('touchstart', addTodo);
 inputElem.addEventListener('keydown', function (e) {
 	if (e.keyCode === 13) {
 		addTodo();
