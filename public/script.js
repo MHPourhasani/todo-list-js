@@ -1,4 +1,6 @@
 const $ = document;
+const hamMenu = $.querySelector('.hamMenu');
+
 const inputElem = $.querySelector('#inputElem');
 const addTodoBtn = $.querySelector('#addTodoBtn');
 const clearInputBtn = $.querySelector('#clearInputBtn');
@@ -23,11 +25,11 @@ function addTodo() {
 		let newTodoObj = {
 			id: todosArray.length + 1,
 			todoTitle: inputValue,
-			status: 'not Status',
+			status: 'inComplete',
 		};
 		todosArray.push(newTodoObj);
 		setlocalStorageFunc(todosArray);
-		addTodoToNotStatus(todosArray);
+		addTodoGenerator(todosArray);
 		console.log(todosArray);
 
 		inputElem.classList.add('border-violet-600');
@@ -41,8 +43,9 @@ function addTodo() {
 }
 
 // add todos to not status section
-function addTodoToNotStatus(todosArray) {
+function addTodoGenerator(todosArray) {
 	let newLiElem, newLableElem, newDivElem, newDoingBtn, newCompleteBtn, newDeleteBtn;
+	inCompleteTodoList.innerHTML = '';
 
 	todosArray.forEach(function (todo) {
 		newLiElem = $.createElement('li');
@@ -67,7 +70,7 @@ function addTodoToNotStatus(todosArray) {
 		// newCompleteBtn
 		newCompleteBtn = $.createElement('button');
 		// newCompleteBtn.innerHTML = '<i class="fa-light fa-squarw-check"></i>';
-		newCompleteBtn.innerHTML = '<i class="fa fa-trash-o"></i>';
+		newCompleteBtn.innerHTML = '<i class="bi bi-check2-square"></i>';
 		// newCompleteBtn.innerHTML = 'complete';
 		newCompleteBtn.className =
 			'bg-green-500 mx-1 text-white text-sm rounded-md flex items-center justify-center';
@@ -98,14 +101,29 @@ function addTodoToNotStatus(todosArray) {
 	});
 }
 
-// localStorage Function
+// set localStorage Function
 function setlocalStorageFunc(todosArray) {
 	localStorage.setItem('todos', JSON.stringify(todosArray));
 }
 
+// get localStorage Function
+function getlocalStorageFunc() {
+	let localStorageTodos = JSON.parse(localStorage.getItem('todos'));
+	if (localStorageTodos) {
+		todosArray = localStorageTodos;
+	} else {
+		todosArray = [];
+	}
+	
+	addTodoGenerator(todosArray);
+}
+
+// create load Window Event Listener
+window.addEventListener('load', getlocalStorageFunc);
+
 // create addTodoBtn Event Listener
 addTodoBtn.addEventListener('click', addTodo);
-addTodoBtn.addEventListener('touchend', addTodo);
+// addTodoBtn.addEventListener('touchend', addTodo);
 inputElem.addEventListener('keydown', function (e) {
 	if (e.keyCode === 13) {
 		addTodo();
