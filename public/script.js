@@ -86,9 +86,7 @@ function addTodoGenerator(todosArray) {
 		// newDeleteBtn.innerHTML = 'delete';
 		newDeleteBtn.className =
 			'bg-red-500 mx-1 text-white text-sm rounded-md flex items-center justify-center';
-		newDeleteBtn.addEventListener('click', function (e) {
-			e.target.parentElement.parentElement.remove();
-		});
+		newDeleteBtn.setAttribute('onclick', 'deleteTodoHandler (' + todo.id + ')');
 
 		// append newCompleteBtn and newDeleteBtn to newDivElem
 		newDivElem.append(newDoingBtn, newCompleteBtn, newDeleteBtn);
@@ -99,6 +97,18 @@ function addTodoGenerator(todosArray) {
 
 		inputElem.value = '';
 	});
+}
+
+function deleteTodoHandler(todoId) {
+	let localStorageTodos = JSON.parse(localStorage.getItem('todos'));
+
+	let mainTodoIndex = todosArray.findIndex(function (todo) {
+		return todoId === todo.id;
+	});
+
+	todosArray.splice(mainTodoIndex, 1);
+	setlocalStorageFunc(todosArray);
+	addTodoGenerator(todosArray);
 }
 
 // set localStorage Function
@@ -114,7 +124,7 @@ function getlocalStorageFunc() {
 	} else {
 		todosArray = [];
 	}
-	
+
 	addTodoGenerator(todosArray);
 }
 
